@@ -3,7 +3,7 @@
 
 */
 
-require '/composer/vendor/autoload.php';
+require 'vendor/autoload.php';
 use Facebook\WebDriver\Remote\RemoteWebDriver;
 use Facebook\WebDriver\WebDriverBy;
 use Facebook\WebDriver\WebDriverExpectedCondition;
