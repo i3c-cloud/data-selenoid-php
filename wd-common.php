@@ -23,7 +23,7 @@ private $line;
 function startSession(){
 	$cp = DesiredCapabilities::chrome();
 	$cp->setCapability("enableVNC", true);	
-	$this->wd = RemoteWebDriver::create("http://selenoid:4444/wd/hub",$cp);
+	$this->wd = RemoteWebDriver::create("http://localhost:4444/wd/hub",$cp);
 //		array("version"=>"68.0", "browserName"=>"chrome")
 //	);
 	//return $this->wd;
