@@ -1,5 +1,6 @@
 <?php
 echo "test1\n";
+echo "Script stats ...\n";
 include ('wd-common.php');
 
 $GLOBALS['checkCache']=true;
