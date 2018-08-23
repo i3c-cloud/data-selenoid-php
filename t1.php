@@ -9,7 +9,7 @@ $GLOBALS['checkCache']=true;
 use Facebook\WebDriver\Remote\RemoteWebDriver;
 use Facebook\WebDriver\WebDriverBy;
 use Facebook\WebDriver\WebDriverExpectedCondition;
-
+$GLOBALS['pageToStop']=2;
 $GLOBALS['rootDir'] = "/i3c/data/extracted";
 $GLOBALS['sharedDir']='/i3c/.shared/selenoid';
 $GLOBALS['rootUrl'] = "http://www.rzeszowiak.pl";
@@ -463,7 +463,7 @@ wdEcho("|PACKAGEFOLDER: ".$advSharedDir."\n");
 
 $pa=array();
 $pn=array();
-for($i=1;$i<17;$i++){
+for($i=1;$i<$GLOBALS['pageToStop'];$i++){
 	$foundStop = false;
 	$fi = formatPageNr($i);
 	$startPage = "http://www.rzeszowiak.pl/Nieruchomosci-Sprzedam-3070".$fi."1155?r=domy";	
