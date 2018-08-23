@@ -153,9 +153,9 @@ function processBoxContent($a){
 	}
 }
 
-function addDir($w,$advDir){	
+function addDir($w,$advDir,$makeDir=true){	
 	$ndir = $advDir.'/'.$w;
-	if (!file_exists($ndir)){
+	if ($makeDir && !file_exists($ndir)){
 		echo "making dir:".$ndir."\n";
 		mkdir($ndir);
 	}
@@ -224,7 +224,7 @@ function processDetails($wd,$rootFolder,$url){
 	$advDir = $GLOBALS['advDir'];
 	$advSharedDir = $GLOBALS['advSharedDir'];
 	
-	$advDir = addDir($d['data'],$advDir);
+	$advDir = addDir($d['data'],$advDir,$GLOBALS['storeAdv']);
 	$advSharedDir = addDir($GLOBALS['timeStampFolder'],$advSharedDir);
 	
 	
@@ -233,7 +233,7 @@ function processDetails($wd,$rootFolder,$url){
 	foreach($a as $v){
 		$w = trim($v); 
 		if ($w!=''){
-			$advDir = addDir($w,$advDir);
+			$advDir = addDir($w,$advDir,$GLOBALS['storeAdv']);
 			$advSharedDir = addDir($w,$advSharedDir);
 		}
 	}
@@ -241,7 +241,7 @@ function processDetails($wd,$rootFolder,$url){
 	//	echo "item already downloaded - ignoring ...\n";
 	//	return true;
 	//}	
-	addDir('img',$advDir);
+	addDir('img',$advDir,$GLOBALS['storeAdv']);
 	addDir('img',$advSharedDir);
 	
 	// telefon
