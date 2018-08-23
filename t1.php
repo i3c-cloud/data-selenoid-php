@@ -9,7 +9,7 @@ $GLOBALS['checkCache']=true;
 use Facebook\WebDriver\Remote\RemoteWebDriver;
 use Facebook\WebDriver\WebDriverBy;
 use Facebook\WebDriver\WebDriverExpectedCondition;
-$GLOBALS['pageToStop']=2;
+$GLOBALS['pageToStop']=10;
 $GLOBALS['rootDir'] = "/i3c/data/extracted";
 $GLOBALS['sharedDir']='/i3c/.shared/selenoid';
 $GLOBALS['rootDomain']='www.rzeszowiak.pl';
@@ -46,9 +46,9 @@ echo "wdclass:".get_class($wd);
 addDir('',$GLOBALS['rootDir']);
 
 
-$ar = explode("/",$GLOBALS['rootUrl']);
-$rootFolder = $ar[(count($ar)-1)];
-
+//$ar = explode("/",$GLOBALS['rootUrl']);
+//$rootFolder = $ar[(count($ar)-1)];
+$rootFolder=$GLOBALS['rootDomain'];
 $advDir=$GLOBALS['rootDir'];
 $advSharedDir=$GLOBALS['sharedDir'];
 
