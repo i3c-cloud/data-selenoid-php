@@ -24,6 +24,7 @@ function startSession(){
 	$cp = DesiredCapabilities::chrome();
 	$cp->setCapability("enableVNC", true);	
 	$this->wd = RemoteWebDriver::create("http://localhost:4444/wd/hub",$cp);
+	return $this->wd;
 //		array("version"=>"68.0", "browserName"=>"chrome")
 //	);
 	//return $this->wd;
@@ -221,9 +222,16 @@ function wdRes($r,$name){
 }
 
 function wdEcho($msg){
-	echo $msg."\n";
+	echo "\n".$msg;
 }
 
 function wdException($msg){
 	throw new Exception($msg);
+}
+
+function wdJsonEncode($a){
+	return json_encode($a,JSON_PRETTY_PRINT
+			+JSON_UNESCAPED_SLASHES
+			+JSON_UNESCAPED_UNICODE
+			);	
 }
