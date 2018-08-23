@@ -1,5 +1,6 @@
 <?php
 echo "test1\n";
+exit;
 include ('wd-common.php');
 
 $GLOBALS['checkCache']=true;
